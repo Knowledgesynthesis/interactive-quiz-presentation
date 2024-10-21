@@ -41,6 +41,10 @@
             border-radius: 10px;
             background-color: #1e1e1e;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid #444;
+        }
+        .reveal .backgrounds {
+            background: #181818;
         }
     </style>
 </head>
@@ -144,14 +148,16 @@
     <script>
         Reveal.initialize();
         function checkAnswer(button, correctness) {
+            const buttons = button.parentElement.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+
             if (correctness === 'correct') {
                 button.classList.add('correct');
             } else {
                 button.classList.add('incorrect');
             }
-            // Disable all buttons after answering
-            const buttons = button.parentElement.querySelectorAll('button');
-            buttons.forEach(btn => btn.disabled = true);
         }
     </script>
 </body>
