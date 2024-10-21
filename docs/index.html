@@ -123,4 +123,57 @@
             </section>
             <!-- Question 8 -->
             <section>
-                <h2 style="font-weight: normal;">Q8: A new test has been developed for early diagnosis of pancreatic cancer. It uses a serum marker level as an indicator of the neoplastic process. The graph below demonstrates the distribution of serum marker levels in both healthy and diseased populations
+                <h2 style="font-weight: normal;">Q8: A new test has been developed for early diagnosis of pancreatic cancer. It uses a serum marker level as an indicator of the neoplastic process. The graph below demonstrates the distribution of serum marker levels in both healthy and diseased populations. Compared to the blue curves, the red curves are associated with:</h2>
+                <img src="images/Q8.png" alt="Question 8 Image" style="display: block; margin: 20px auto; max-width: 100%; height: auto; border: 1px solid #444;">
+                <button onclick="logAndCheckAnswer(this, 'wrong')">A) Higher sensitivity and lower specificity</button><br>
+                <button onclick="logAndCheckAnswer(this, 'correct')">B) Higher sensitivity and higher specificity</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">C) Higher sensitivity and same specificity</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">D) Lower sensitivity and higher specificity</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">E) Lower sensitivity and lower specificity</button>
+            </section>
+            <!-- Question 9 -->
+            <section>
+                <h2 style="font-weight: normal;">Q9: A rapid test that is used to diagnose HSV infection is positive in HSV-infected patients 9 times more often than in non-infected patients. Which of the following expressions is used to derive this information?</h2>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">A) True positives/All positives</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">B) True positives/True negatives</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">C) Sensitivity/Specificity</button><br>
+                <button onclick="logAndCheckAnswer(this, 'correct')">D) Sensitivity/(1 - Specificity)</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">E) Specificity/(1 - Sensitivity)</button>
+            </section>
+            <!-- Question 10 -->
+            <section>
+                <h2 style="font-weight: normal;">Q10: A new serum marker shows promise in the early diagnosis of colon cancer. It represents a fetal antigen that has minimal expression in healthy adults, but has increased expression in those with colon cancer. Various serum concentration levels (P 1, P2, and P3) are tested as cutoff points for diagnosis of disease. The sensitivity and specificity of the test at each of these serum concentrations is then compared to the gold standard (excisional biopsy). The following curve is constructed. Which of the following is the best statement concerning this new test?</h2>
+                <img src="images/Q10.png" alt="Question 10 Image" style="display: block; margin: 20px auto; max-width: 100%; height: auto; border: 1px solid #444;">
+                <button onclick="logAndCheckAnswer(this, 'wrong')">A) P1 represents the cutoff point with the best 'ruling out' possibility</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">B) P2 represents the cutoff point with the best 'ruling in' possibility</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">C) P3 corresponds to the cutoff point with the highest positive predictive value</button><br>
+                <button onclick="logAndCheckAnswer(this, 'correct')">D) P3 corresponds to a lower serum marker value than does P1</button><br>
+                <button onclick="logAndCheckAnswer(this, 'wrong')">E) The higher the serum marker level used as a cutoff point, the lower the specificity</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script>
+        Reveal.initialize();
+        function logAndCheckAnswer(button, correctness) {
+            console.log('Button clicked:', button.innerText);
+            console.log('Correctness:', correctness);
+
+            const buttons = button.parentElement.querySelectorAll('button');
+            buttons.forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+
+            if (correctness === 'correct') {
+                console.log('Answer is correct');
+                button.classList.add('correct');
+            } else {
+                console.log('Answer is incorrect');
+                button.classList.add('incorrect');
+            }
+        }
+    </script>
+</body>
+</html>
