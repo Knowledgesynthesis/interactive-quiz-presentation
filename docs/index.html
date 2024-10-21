@@ -43,7 +43,6 @@
             background-color: #1e1e1e;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
             border: 1px solid #444;
-            max-height: 80vh;
             overflow-y: auto;
         }
         .reveal .backgrounds {
@@ -78,7 +77,7 @@
             <!-- Question 3 -->
             <section>
                 <h2 style="font-weight: normal;">Q3: The following graph represents the vaccination rate dynamics for hepatitis B in IV drug abusers in town A. Which of the following hepatitis D statistics is most likely to be affected by the reported data?</h2>
-                <img src="images/Q3.png" alt="Question 3 Image" style="display: block; margin: 20px auto; max-height: 300px; overflow: hidden; border: 1px solid #444;">
+                <img src="images/Q3.png" alt="Question 3 Image" style="display: block; margin: 20px auto; max-width: 100%; height: auto; border: 1px solid #444;">
                 <button onclick="logAndCheckAnswer(this, 'wrong')">A) Hospitalization rate</button><br>
                 <button onclick="logAndCheckAnswer(this, 'wrong')">B) Case fatality rate</button><br>
                 <button onclick="logAndCheckAnswer(this, 'wrong')">C) Median survival</button><br>
@@ -95,7 +94,7 @@
             </section>
             <!-- Question 5 -->
             <section>
-                <h2 style="font-weight: normal;">Q5: A study is conducted to assess the relationship between plasma homocysteine level and folic acid intake. The investigators demonstrate that the plasma homocysteine level is inversely related to folic acid intake, and the correlation coefficient is -0.8 (p < 0.01). According to the information provided, how much of the variability in plasma homocysteine levels is explained by folic acid intake?</h2>
+                <h2 style="font-weight: normal;">Q5: A study is conducted to assess the relationship between plasma homocysteine level and folic acid intake. The investigators demonstrate that the plasma homocysteine level is inversely related to folic acid intake, and the correlation coefficient is -0.8 (p &lt; 0.01). According to the information provided, how much of the variability in plasma homocysteine levels is explained by folic acid intake?</h2>
                 <button onclick="logAndCheckAnswer(this, 'wrong')">A) &gt; 0.99</button><br>
                 <button onclick="logAndCheckAnswer(this, 'wrong')">B) 0.80</button><br>
                 <button onclick="logAndCheckAnswer(this, 'correct')">C) 0.64</button><br>
@@ -142,7 +141,7 @@
             </section>
             <!-- Question 10 -->
             <section>
-                <h2 style="font-weight: normal;">Q10: A new serum marker shows promise in the early diagnosis of colon cancer. It represents a fetal antigen that has minimal expression in healthy adults, but has increased expression in those with colon cancer. Various serum concentration levels (P 1, P2, and P3) are tested as cutoff points for diagnosis of disease. The sensitivity and specificity of the test at each of these serum concentrations is then compared to the gold standard (excisional biopsy). The following curve is constructed. Which of the following is the best statement concerning this new test?</h2>
+                <h2 style="font-weight: normal;">Q10: A new serum marker shows promise in the early diagnosis of colon cancer. It represents a fetal antigen that has minimal expression in healthy adults, but has increased expression in those with colon cancer. Various serum concentration levels (P1, P2, and P3) are tested as cutoff points for diagnosis of disease. The sensitivity and specificity of the test at each of these serum concentrations is then compared to the gold standard (excisional biopsy). The following curve is constructed. Which of the following is the best statement concerning this new test?</h2>
                 <img src="images/Q10.png" alt="Question 10 Image" style="display: block; margin: 20px auto; max-width: 100%; height: auto; border: 1px solid #444;">
                 <button onclick="logAndCheckAnswer(this, 'wrong')">A) P1 represents the cutoff point with the best 'ruling out' possibility</button><br>
                 <button onclick="logAndCheckAnswer(this, 'wrong')">B) P2 represents the cutoff point with the best 'ruling in' possibility</button><br>
@@ -156,7 +155,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script>
-        Reveal.initialize();
+        Reveal.initialize({
+            overflow: true
+        });
         function logAndCheckAnswer(button, correctness) {
             console.log('Button clicked:', button.innerText);
             console.log('Correctness:', correctness);
